@@ -52,3 +52,7 @@ class LoggerDict(dict):
 
         for logger, level in zip(loggers, levels):
             self[logger.name] = (logger, level)
+
+    def remove_loggers(self, logger_names: Iterable[str]):
+        for logger_name in logger_names:
+            self.pop(key=logger_name)
